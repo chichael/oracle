@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import Anthropic from "@anthropic-ai/sdk";
 import { supabaseAdmin } from "@/lib/supabase";
 import { INVESTING_AGENT_SYSTEM, MEMORY_EXTRACTION_PROMPT } from "@/lib/agents";
