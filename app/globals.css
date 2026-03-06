@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --base: #0A0C10;
+  --surface: #111318;
+  --panel: #161920;
+  --border: #1E2229;
+  --amber: #F59E0B;
+  --amber-dim: #92600A;
+  --text-primary: #E8EAF0;
+  --text-secondary: #8A909E;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--base);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--amber-dim);
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(245, 158, 11, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Scanline effect */
+.scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.05) 2px,
+    rgba(0,0,0,0.05) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Message prose styles */
+.prose-investing p { margin-bottom: 0.75rem; }
+.prose-investing p:last-child { margin-bottom: 0; }
+.prose-investing ul { margin: 0.5rem 0 0.75rem 1.25rem; list-style: disc; }
+.prose-investing ol { margin: 0.5rem 0 0.75rem 1.25rem; list-style: decimal; }
+.prose-investing li { margin-bottom: 0.25rem; }
+.prose-investing strong { color: #E8EAF0; font-weight: 600; }
+.prose-investing em { color: #F59E0B; font-style: italic; }
+.prose-investing code {
+  font-family: 'IBM Plex Mono', monospace;
+  background: rgba(245,158,11,0.08);
+  color: #F59E0B;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+.prose-investing h1, .prose-investing h2, .prose-investing h3 {
+  color: #E8EAF0;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+.prose-investing blockquote {
+  border-left: 2px solid #F59E0B;
+  padding-left: 1rem;
+  color: #8A909E;
+  margin: 0.5rem 0;
+}
+.prose-investing hr {
+  border-color: #1E2229;
+  margin: 1rem 0;
+}
+
+/* Amber glow effect */
+.amber-glow {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.15), 0 0 60px rgba(245, 158, 11, 0.05);
+}
+
+/* Textarea reset */
+textarea {
+  resize: none;
+  outline: none;
+}
+textarea:focus {
+  outline: none;
+}
